@@ -10,7 +10,6 @@ import com.skuska.petrinet.edges.EdgeException;
 import java.util.ArrayList;
 
 public class PetriNet {
-    private String name;
     private final ArrayList<Place> places;
     private final ArrayList<Transition> transitions;
     private ArrayList<Integer> tokens;
