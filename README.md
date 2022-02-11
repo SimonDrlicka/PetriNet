@@ -11,7 +11,7 @@ Pomocou metód addEdge(String idFrom, String idTo, int multiplicity = 1) a addRe
 
 
 ## Nastavenie počiatočného značkovania
-Pomocou metódy setTokens(ArrayList<Integer>), tento ArrayList musí obsahovat presný počet prvkov ako je počet Places PetrihoSiete
+Pomocou metódy setTokens(ArrayList<Integer>), tento ArrayList musí obsahovat rovnaký počet prvkov ako je počet Places PetrihoSiete
 
 
 ## Spustanie prechodov

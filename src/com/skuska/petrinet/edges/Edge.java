@@ -14,14 +14,6 @@ public class Edge {
     public static int RESET = 1;
 
     public Edge(Component from, Component to, int multiplicity) throws EdgeException {
-//        if((from instanceof Place && to instanceof Place)|| (from instanceof Transition && to instanceof Transition) ){
-//            throw new EdgeException("Edges can be only P-T or T-P");
-//        }
-//        this.from = from;
-//        this.to = to;
-//        this.multiplicity = multiplicity;
-//        from.addEdge(this);
-//        to.addEdge(this);
         this(from, to, multiplicity,NORMAL);
     }
     public Edge(Component from, Component to, int multiplicity, int edgeType) throws EdgeException {
