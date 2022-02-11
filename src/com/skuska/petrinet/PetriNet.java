@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class PetriNet {
     private String name;
-    private ArrayList<Place> places;
-    private ArrayList<Transition> transitions;
+    private final ArrayList<Place> places;
+    private final ArrayList<Transition> transitions;
     private ArrayList<Integer> tokens;
-    private ArrayList<Edge> edges;
+    private final ArrayList<Edge> edges;
 
     public PetriNet(){
         places = new ArrayList<>();
