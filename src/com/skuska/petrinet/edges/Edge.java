@@ -4,8 +4,8 @@ import com.skuska.petrinet.components.*;
 
 
 public class Edge {
-    private Component from;
-    private Component to;
+    private final Component from;
+    private final Component to;
     private final int multiplicity;
     public Edge(Component from, Component to, int multiplicity) throws EdgeException {
         if((from instanceof Place && to instanceof Place)|| (from instanceof Transition && to instanceof Transition) ){

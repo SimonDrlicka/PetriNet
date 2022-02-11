@@ -32,6 +32,15 @@ public class PetriNet {
         return this;
     }
 
+    public PetriNet addPlace(String id){
+        addComponent(new Place(id));
+        return this;
+    }
+    public PetriNet addTransition(String id){
+        addComponent(new Transition(id));
+        return this;
+    }
+
     public PetriNet runTransition(String id) throws ComponentNotFound {
         getTransition(id).run();
         update();
