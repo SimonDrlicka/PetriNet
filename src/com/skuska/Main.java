@@ -36,7 +36,7 @@ public class Main {
             exception.printStackTrace();
         }
         try{
-            petriNet.setPz(new ArrayList<Integer>(){{
+            petriNet.setTokens(new ArrayList<Integer>(){{
                 add(1);
                 add(0);
                 add(0);
@@ -56,7 +56,7 @@ public class Main {
         petriNet.runTransition("t0");
 
 
-        System.out.println(petriNet.getPz());
+        System.out.println(petriNet.getTokens());
         System.out.println("Hotovo");
 
     }

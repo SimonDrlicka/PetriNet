@@ -13,7 +13,7 @@ public class PetriNet {
     private String name;
     private ArrayList<Place> places;
     private ArrayList<Transition> transitions;
-    private ArrayList<Integer> pz;
+    private ArrayList<Integer> tokens;
     private ArrayList<Edge> edges;
 
     public PetriNet(){
@@ -38,9 +38,9 @@ public class PetriNet {
         return this;
     }
     private void update(){
-        pz.clear();
+        tokens.clear();
         for (Place place : places) {
-            pz.add(place.getTokens());
+            tokens.add(place.getTokens());
         }
     }
 
@@ -54,12 +54,12 @@ public class PetriNet {
         return this;
     }
 
-    public void setPz(ArrayList<Integer> pz)throws PetriNetException{
-        if(pz.size() != places.size())
+    public void setTokens(ArrayList<Integer> tokens)throws PetriNetException{
+        if(tokens.size() != places.size())
             throw new PetriNetException("Wrong size of input array (arrays size must be equal to the sum of places)");
-        this.pz = pz;
-        for (int i = 0; i<this.pz.size(); i++){
-            places.get(i).setTokens(this.pz.get(i));
+        this.tokens = tokens;
+        for (int i = 0; i<this.tokens.size(); i++){
+            places.get(i).setTokens(this.tokens.get(i));
         }
     }
 
@@ -91,7 +91,7 @@ public class PetriNet {
         throw new ComponentNotFound(id);
     }
 
-    public ArrayList<Integer> getPz() {
-        return pz;
+    public ArrayList<Integer> getTokens() {
+        return tokens;
     }
 }
