@@ -3,8 +3,6 @@ package com.skuska;
 import com.skuska.petrinet.PetriNet;
 import com.skuska.petrinet.PetriNetException;
 import com.skuska.petrinet.components.ComponentNotFound;
-import com.skuska.petrinet.components.Place;
-import com.skuska.petrinet.components.Transition;
 import com.skuska.petrinet.edges.EdgeException;
 
 import java.util.ArrayList;
