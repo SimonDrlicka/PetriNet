@@ -45,15 +45,15 @@ public class Main {
         }catch (PetriNetException e) {
             e.printStackTrace();
         }
-        petriNet.runTransition("t3");
-        petriNet.runTransition("t3");
-        petriNet.runTransition("t3");
-        petriNet.runTransition("t3");
-        petriNet.runTransition("t3");
-        petriNet.runTransition("t1");
-        petriNet.runTransition("t1");
-        petriNet.runTransition("t0");
-        petriNet.runTransition("t0");
+        petriNet.runTransition("t3")
+                .runTransition("t3")
+                .runTransition("t3")
+                .runTransition("t3")
+                .runTransition("t3")
+                .runTransition("t1")
+                .runTransition("t1")
+                .runTransition("t0")
+                .runTransition("t0");
 
 
         System.out.println(petriNet.getTokens());
