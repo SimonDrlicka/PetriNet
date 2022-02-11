@@ -13,13 +13,13 @@ public class Main {
 
     public static void main(String[] args) throws ComponentNotFound {
         PetriNet petriNet = new PetriNet();
-        petriNet.addComponent(new Place("p1"))
-                .addComponent(new Place("p2"))
-                .addComponent(new Place("p3"))
-                .addComponent(new Transition("t0"))
-                .addComponent(new Transition("t1"))
-                .addComponent(new Transition("t2"))
-                .addComponent(new Transition("t3"));
+        petriNet.addPlace("p1")
+                .addPlace("p2")
+                .addPlace("p3")
+                .addTransition("t0")
+                .addTransition("t1")
+                .addTransition("t2")
+                .addTransition("t3");
         try{
             petriNet.addEdge("p1", "t3")
                     .addEdge("t3", "p1",2)
