@@ -22,8 +22,9 @@ Pomocou metody getTokens()
 
 ### Priklad
 ```java
-class Main{
-    public static void main(String[] args) {
+public class Main {
+
+    public static void main(String[] args) throws ComponentNotFound {
         PetriNet petriNet = new PetriNet();
         petriNet.addPlace("p1")
                 .addPlace("p2")
@@ -42,7 +43,8 @@ class Main{
                     .addEdge("t1", "p3")
                     .addEdge("t2", "p3")
                     .addEdge("p3", "t2")
-                    .addEdge("p3", "t0");
+                    .addEdge("p3", "t0")
+                    .addResetEdge("p2", "t1");
 
         } catch (ComponentNotFound | EdgeException exception) {
             exception.printStackTrace();
@@ -59,17 +61,12 @@ class Main{
         }
         petriNet.runTransition("t3")
                 .runTransition("t3")
-                .runTransition("t3")
-                .runTransition("t3")
-                .runTransition("t3")
-                .runTransition("t1")
-                .runTransition("t1")
-                .runTransition("t0")
-                .runTransition("t0");
+                .runTransition("t1");
 
 
         System.out.println(petriNet.getTokens());
-//Out: [2,5,1]
+        System.out.println("Hotovo");
+
     }
 }
 
