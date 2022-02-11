@@ -66,6 +66,6 @@ petriNet.runTransition("t3")
 
 
 System.out.println(petriNet.getTokens());
-System.out.println("Hotovo");
+//Out: [2,5,1]
 
 ```
