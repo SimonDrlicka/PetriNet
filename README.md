@@ -6,6 +6,9 @@ Petri siete s možnosťou pridavania hran, miest a prechodov s moznostou spustan
 Napr. addComponent(new Place(String id)) alebo new Transition(String id)
 * Pomocou metod addPlace(String id) a addTransition(String id)
 
+## Pridávanie hrán
+Pomocou metódy addEdge(String idFrom, String idTo, int multiplicity = 1)
+
 ## Nastavenie počiatočného značkovania
 Pomocou metódy setTokens(ArrayList<Integer>), tento ArrayList musí obsahovat presný počet prvkov ako je počet Places PetrihoSiete
 
