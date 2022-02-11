@@ -1,16 +1,14 @@
 package com.skuska.petrinet.components;
 
-import com.skuska.petrinet.edges.EdgeRepair;
+import com.skuska.petrinet.edges.Edge;
 
 import java.util.ArrayList;
 
 public abstract class Component {
     protected String id;
-    protected ArrayList<Component> from;
-    protected ArrayList<Component> to;
+    protected ArrayList<Edge> edges;
     Component(String id){
-        from = new ArrayList<>();
-        to = new ArrayList<>();
+        edges = new ArrayList<>();
         this.id = id;
     }
 
@@ -18,8 +16,5 @@ public abstract class Component {
         return id;
     }
 
-    public abstract void addFrom(Component c) throws ComponentNotFound;
-    public abstract void addTo(Component c) throws ComponentNotFound;
-
-
+    public abstract void addEdge(Edge e);
 }

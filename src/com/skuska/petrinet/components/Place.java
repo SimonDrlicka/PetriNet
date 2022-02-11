@@ -1,5 +1,7 @@
 package com.skuska.petrinet.components;
 
+import com.skuska.petrinet.edges.Edge;
+
 public class Place extends Component{
     private int tokens;
 
@@ -8,24 +10,18 @@ public class Place extends Component{
     }
 
     @Override
-    public void addFrom(Component c) throws ComponentNotFound {
-        if(! (c instanceof Transition))
-            throw new ComponentNotFound("Wrong instance type");
-        from.add(c);
-    }
-    public void reduce(){
-        tokens--;
-    }
-    public void add(){
-        tokens++;
+    public void addEdge(Edge e) {
+        edges.add(e);
     }
 
-    @Override
-    public void addTo(Component c) throws ComponentNotFound {
-        if(! (c instanceof Transition))
-            throw new ComponentNotFound("Wrong instance type");
-        to.add(c);
+
+    public void reduce(int pocet){
+        tokens -= pocet;
     }
+    public void add(int pocet){
+        tokens+=pocet;
+    }
+
 
     public int getTokens() {
         return tokens;

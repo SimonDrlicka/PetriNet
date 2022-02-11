@@ -51,8 +51,6 @@ public class PetriNet {
         Component fr = getComponent(from);
         Component t = getComponent(to);
         edges.add(new Edge(fr, t, multiplicity));
-        fr.addTo(t);
-        t.addFrom(fr);
         return this;
     }
 

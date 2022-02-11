@@ -22,7 +22,7 @@ public class Main {
                 .addComponent(new Transition("t3"));
         try{
             petriNet.addEdge("p1", "t3")
-                    .addEdge("t3", "p1")
+                    .addEdge("t3", "p1",2)
                     .addEdge("p1", "t1")
                     .addEdge("p1", "t0")
                     .addEdge("t3", "p2")
@@ -46,6 +46,16 @@ public class Main {
             e.printStackTrace();
         }
         petriNet.runTransition("t3");
+        petriNet.runTransition("t3");
+        petriNet.runTransition("t3");
+        petriNet.runTransition("t3");
+        petriNet.runTransition("t3");
+        petriNet.runTransition("t1");
+        petriNet.runTransition("t1");
+        petriNet.runTransition("t0");
+        petriNet.runTransition("t0");
+
+
         System.out.println(petriNet.getPz());
         System.out.println("Hotovo");
 
