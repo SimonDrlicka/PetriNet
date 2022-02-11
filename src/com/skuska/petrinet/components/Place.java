@@ -21,7 +21,7 @@ public class Place extends Component{
     public void add(int pocet){
         tokens+=pocet;
     }
-
+    public void reset(){tokens = 0;} //removes all tokens after Reset edge
 
     public int getTokens() {
         return tokens;

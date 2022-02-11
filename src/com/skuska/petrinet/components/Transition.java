@@ -19,8 +19,12 @@ public class Transition extends Component{
         if(isRunnable()){
             for(Edge e: edges){
                 if(e.getTo() == this){
-                    ((Place)e.getFrom()).reduce(e.getMultiplicity());
-                    continue;
+                    if(e.getType() == Edge.RESET){
+                        ((Place)e.getFrom()).reset();
+                    }else{
+                        ((Place)e.getFrom()).reduce(e.getMultiplicity());
+                        continue;
+                    }
                 }
                 if(e.getFrom() == this){
                     ((Place)e.getTo()).add(e.getMultiplicity());

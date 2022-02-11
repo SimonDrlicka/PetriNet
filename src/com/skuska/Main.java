@@ -3,6 +3,7 @@ package com.skuska;
 import com.skuska.petrinet.PetriNet;
 import com.skuska.petrinet.PetriNetException;
 import com.skuska.petrinet.components.ComponentNotFound;
+import com.skuska.petrinet.edges.Edge;
 import com.skuska.petrinet.edges.EdgeException;
 
 import java.util.ArrayList;
@@ -28,7 +29,8 @@ public class Main {
                     .addEdge("t1", "p3")
                     .addEdge("t2", "p3")
                     .addEdge("p3", "t2")
-                    .addEdge("p3", "t0");
+                    .addEdge("p3", "t0")
+                    .addResetEdge("p2", "t1");
 
         } catch (ComponentNotFound | EdgeException exception) {
             exception.printStackTrace();
@@ -45,13 +47,7 @@ public class Main {
         }
         petriNet.runTransition("t3")
                 .runTransition("t3")
-                .runTransition("t3")
-                .runTransition("t3")
-                .runTransition("t3")
-                .runTransition("t1")
-                .runTransition("t1")
-                .runTransition("t0")
-                .runTransition("t0");
+                .runTransition("t1");
 
 
         System.out.println(petriNet.getTokens());

@@ -61,6 +61,10 @@ public class PetriNet {
         edges.add(new Edge(fr, t, multiplicity));
         return this;
     }
+    public PetriNet addResetEdge(String from, String to) throws ComponentNotFound, EdgeException {
+        edges.add(new Edge(getComponent(from), getComponent(to), 1, Edge.RESET));
+        return this;
+    }
 
     public void setTokens(ArrayList<Integer> tokens)throws PetriNetException{
         if(tokens.size() != places.size())
