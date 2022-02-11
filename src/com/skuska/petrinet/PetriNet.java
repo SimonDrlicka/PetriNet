@@ -21,15 +21,7 @@ public class PetriNet {
         edges = new ArrayList<>();
     }
 
-    public PetriNet addComponent(Component c){
-        if(c instanceof Place){
-            places.add((Place)c);
-        }else{
-            transitions.add((Transition) c);
-        }
 
-        return this;
-    }
 
     public PetriNet addPlace(String id){
         addComponent(new Place(id));
@@ -38,6 +30,14 @@ public class PetriNet {
     public PetriNet addTransition(String id){
         addComponent(new Transition(id));
         return this;
+    }
+    private void addComponent(Component c){
+        if(c instanceof Place){
+            places.add((Place)c);
+        }else{
+            transitions.add((Transition) c);
+        }
+
     }
 
     public PetriNet runTransition(String id) throws ComponentNotFound {
