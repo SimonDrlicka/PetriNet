@@ -17,4 +17,13 @@ public abstract class Component {
     }
 
     public abstract void addEdge(Edge e);
+
+    public ArrayList<Edge> getEdges() {
+        return edges;
+    }
+
+    @Override
+    public String toString() {
+        return id;
+    }
 }

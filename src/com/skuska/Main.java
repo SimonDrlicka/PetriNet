@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws ComponentNotFound {
+        long start = System.nanoTime();
         PetriNet petriNet = new PetriNet();
         petriNet.addPlace("p1")
                 .addPlace("p2")
@@ -49,9 +50,7 @@ public class Main {
                 .runTransition("t3")
                 .runTransition("t1");
 
-
-        System.out.println(petriNet.getTokens());
-        System.out.println("Hotovo");
+        System.out.println((double)(System.nanoTime() - start)/1000000000);
 
     }
 }

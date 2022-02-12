@@ -21,8 +21,6 @@ public class PetriNet {
         edges = new ArrayList<>();
     }
 
-
-
     public PetriNet addPlace(String id){
         addComponent(new Place(id));
         return this;
@@ -37,7 +35,6 @@ public class PetriNet {
         }else{
             transitions.add((Transition) c);
         }
-
     }
 
     public PetriNet runTransition(String id) throws ComponentNotFound {
@@ -56,11 +53,16 @@ public class PetriNet {
         return addEdge(from, to, 1);
     }
     public PetriNet addEdge(String from, String to, int multiplicity) throws ComponentNotFound, EdgeException {
+
         Component fr = getComponent(from);
         Component t = getComponent(to);
-        edges.add(new Edge(fr, t, multiplicity));
+        Edge e = new Edge(fr, t, multiplicity);
+        edges.add(e);
         return this;
+
     }
+
+
     public PetriNet addResetEdge(String from, String to) throws ComponentNotFound, EdgeException {
         edges.add(new Edge(getComponent(from), getComponent(to), 1, Edge.RESET));
         return this;
@@ -86,7 +88,7 @@ public class PetriNet {
             }
         }
     }
-    private Place getPlace(String id) throws ComponentNotFound {
+    public Place getPlace(String id) throws ComponentNotFound {
         for (Place p: places){
             if(p.getId().equals(id)){
                 return p;
@@ -94,7 +96,7 @@ public class PetriNet {
         }
         throw new ComponentNotFound(id);
     }
-    private Transition getTransition(String id) throws ComponentNotFound {
+    public Transition getTransition(String id) throws ComponentNotFound {
         for (Transition t: transitions) {
             if(t.getId().equals(id)){
                 return t;
@@ -106,4 +108,5 @@ public class PetriNet {
     public ArrayList<Integer> getTokens() {
         return tokens;
     }
+
 }
